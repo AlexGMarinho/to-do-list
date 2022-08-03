@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const checkListRouter = require('../routes/checklist.js');
-const taskRouter = require('../routes/task.js');
+const taskRouter = require('../routes/task');
 const rootRouter = require('../routes');
 const methodOverride = require('method-override');
 
