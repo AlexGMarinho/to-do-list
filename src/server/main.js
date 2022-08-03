@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
 
-const router = require('../routes/checklist.js');
+const checkListRouter = require('../routes/checklist.js');
+const taskRouter = require('../routes/task.js');
 const rootRouter = require('../routes');
 const methodOverride = require('method-override');
 
@@ -18,7 +19,9 @@ app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 app.use('/', rootRouter);
-app.use('/checklists', router);
+app.use('/checklists', checkListRouter);
+app.use('/checklists', taskRouter.checklistDepedent);
+app.use('/tasks', taskRouter.simple);
 
 app.listen(3000, () => {
     console.log(`Servidor esta ouvindo na porta 8080`);
