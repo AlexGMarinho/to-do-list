@@ -5,14 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" type="text/css" href="/stylesheets/bulma.min.css" />
-        <title>Nova lista</title>
+        <title>Editar Lista de tarefas</title>
     </head>
     <body>
         <section class="section">
             <div class="container">
-                <h1 class="title size-4">Nova Lista</h1>
-
-                <%- include('form', {url: '/checklists?_method=post', checklist: checklist}) %>
+                <h1 class="title size-4">Editar Lista</h1>
+                <%- include('form', {url: `/checklists/${checklist.id}?_method=put`, checklist: checklist}) %>
             </div>
         </section>
     </body>
